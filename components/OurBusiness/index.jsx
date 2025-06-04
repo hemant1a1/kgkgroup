@@ -95,7 +95,7 @@ export default function OurBusiness() {
   return (
     <div className="md:min-h-screen bg-white py-4">
       <div className="container">
-        <div className="flex flex-col lg:flex-row items-start lg:pl-12 gap-x-12 w-full mb-12">
+        <div className="flex flex-col lg:flex-row items-start lg:pl-10 gap-x-10 w-full mb-12">
             {/* Heading */}
             <motion.h2
             initial={{ opacity: 0, y: -30 }}
@@ -115,8 +115,8 @@ export default function OurBusiness() {
 
               {/* Split paragraphs for large screens */}
               <div className="hidden lg:flex flex-col">
-                <p className="md:text-lg lg:text-xl leading-relaxed text-black max-w-4xl">
-                  KGK Group leads with a vertically integrated model, connecting the entire value 
+                <p className="md:text-lg lg:text-xl leading-relaxed text-black">
+                  KGK Group leads with a vertically integrated model, connecting the entire value
                 </p>
                 <div className="flex items-center">
                   <p className="md:text-lg lg:text-xl leading-relaxed text-black">
