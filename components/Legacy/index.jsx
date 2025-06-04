@@ -50,7 +50,7 @@ const Legacy = () => {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              Legacy: From Vision to Global Leadership
+              Enduring Legacy
             </motion.h2>
             <motion.p
               className="mb-8"
@@ -59,7 +59,7 @@ const Legacy = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              The story of KGK Group began when Shri Keshrimalji Kothari travelled to Burma and began a passionate pursuit of trading gemstones in India. He started doing business from Burma. His dedication and integrity laid the foundation for a global presence in the gemstone and jewellery industry. Shri Ghisilalji Kothari, inspired by his father’s vision, expanded the group’s horizons, fostering innovation and establishing a tradition of excellence.
+              The story of KGK Group began when Shri Keshrimalji Kothari embarked on a journey to Burma, trading gemstones in India. His dedication and integrity set the foundation for a global presence. Shri Ghisilalji Kothari expanded the vision, fostering innovation and excellence.
             </motion.p>
 
             <motion.p
@@ -69,7 +69,7 @@ const Legacy = () => {
               transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              Under the dynamic leadership of Mr. Navrattan Kothari, the third generation transformed KGK Group into a global jewellery and gemstone brand, earning a reputation as a premium manufacturer with operations spanning across continents. Continuing this legacy, Mr. Sanjay Kothari and Mr. Sandeep Kothari have been key drivers of growth and excellence, paving the way for the fifth generation, including Mr Saransh, Mr Vedant and Mr Arnav to bring fresh, new-age insights.
+              Today, under Mr. Navrattan Kothari, KGK Group has become a premium global brand, with Mr. Sanjay and Mr. Sandeep Kothari continuing the legacy and the fifth generation, including Mr. Saransh, Mr. Vedant, and Mr. Arnav, shaping the future.
             </motion.p>
 
             <motion.button

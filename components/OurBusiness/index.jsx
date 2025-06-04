@@ -18,11 +18,11 @@ import hospitalityImg from '@/assets/images/business/hospitality.jpg';
 
 const businessItems = [
   {
-    key: 'mining',
-    title: 'Mining',
-    image: miningImg,
+    key: 'diamonds',
+    title: 'Diamonds',
+    image: diamondsImg,
     description:
-      'Ethically sourced from South America and Africa, KGK’s diamonds begin at the source—ensuring quality, authenticity, and sustainable practices.',
+      'Natural, ethical, and exquisite—KGK diamonds reflect unmatched beauty, integrity, and transparency.',
   },
   {
     key: 'gemstones',
@@ -32,11 +32,11 @@ const businessItems = [
       'Over 120 years of gemstone legacy—brilliant colors, flawless cuts, and global trust define KGK’s exceptional collection.',
   },
   {
-    key: 'diamonds',
-    title: 'Diamonds',
-    image: diamondsImg,
+    key: 'mining',
+    title: 'Mining',
+    image: miningImg,
     description:
-      'Natural, ethical, and exquisite—KGK diamonds reflect unmatched beauty, integrity, and transparency.',
+      'Ethically sourced from South America and Africa, KGK’s diamonds begin at the source—ensuring quality, authenticity, and sustainable practices.',
   },
   {
     key: 'jewellery',
@@ -116,11 +116,11 @@ export default function OurBusiness() {
               {/* Split paragraphs for large screens */}
               <div className="hidden lg:flex flex-col">
                 <p className="md:text-lg lg:text-xl leading-relaxed text-black max-w-4xl">
-                  KGK Group stands out with its vertically integrated business model, seamlessly connecting the entire value chain from mines to retail. As a global leader in gemstones and diamonds,
+                  KGK Group leads with a vertically integrated model, connecting the entire value 
                 </p>
                 <div className="flex items-center">
                   <p className="md:text-lg lg:text-xl leading-relaxed text-black">
-                    KGK Group provides exceptional quality to customers worldwide.
+                    chain from mines to retail, delivering exceptional quality globally.
                   </p>
                   <div className="flex-grow h-0.5 bg-light-gray ml-14" />
                 </div>
@@ -194,25 +194,37 @@ export default function OurBusiness() {
             </div>
         </div>
 
-        {/* Mobile view: stacked cards */}
+        {/* Mobile view: stacked cards with overlay */}
         <div className="grid md:hidden grid-cols-1 gap-6">
           {businessItems.map((item) => (
-            <div key={item.key} className="relative w-full overflow-hidden shadow-lg rounded-lg">
-              <div className="relative w-full h-60">
+            <div
+              key={item.key}
+              className="relative w-full overflow-hidden shadow-lg rounded-lg"
+            >
+              {/* Image with overlay */}
+              <div className="relative w-full h-80">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   className="object-cover"
                 />
-              </div>
-              <div className="p-4 bg-white">
-                <h3 className="text-lg font-semibold text-heading">{item.title}</h3>
-                <p className="text-sm text-gray-700 mt-2">{item.description}</p>
+                {/* Black gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+
+                {/* Text and button over image */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white flex flex-col items-start">
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-sm mt-1 line-clamp-3">{item.description}</p>
+                  <button className="mt-3 px-4 py-2 bg-white text-black font-medium text-xs uppercase tracking-wide rounded-full hover:bg-gray-200 transition">
+                    Discover More
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
+
 
       </div>
     </div>
