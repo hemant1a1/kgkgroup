@@ -59,7 +59,7 @@ const Legacy = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...
+              The story of KGK Group began when Shri Keshrimalji Kothari travelled to Burma and began a passionate pursuit of trading gemstones in India. He started doing business from Burma. His dedication and integrity laid the foundation for a global presence in the gemstone and jewellery industry. Shri Ghisilalji Kothari, inspired by his father’s vision, expanded the group’s horizons, fostering innovation and establishing a tradition of excellence.
             </motion.p>
 
             <motion.p
@@ -69,7 +69,7 @@ const Legacy = () => {
               transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...
+              Under the dynamic leadership of Mr. Navrattan Kothari, the third generation transformed KGK Group into a global jewellery and gemstone brand, earning a reputation as a premium manufacturer with operations spanning across continents. Continuing this legacy, Mr. Sanjay Kothari and Mr. Sandeep Kothari have been key drivers of growth and excellence, paving the way for the fifth generation, including Mr Saransh, Mr Vedant and Mr Arnav to bring fresh, new-age insights.
             </motion.p>
 
             <motion.button

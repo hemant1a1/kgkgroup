@@ -18,69 +18,70 @@ import hospitalityImg from '@/assets/images/business/hospitality.jpg';
 
 const businessItems = [
   {
-    key: 'gemstones',
-    title: 'Gemstones',
-    image: gemstonesImg,
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-  },
-  {
     key: 'mining',
     title: 'Mining',
     image: miningImg,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+      'Ethically sourced from South America and Africa, KGK’s diamonds begin at the source—ensuring quality, authenticity, and sustainable practices.',
+  },
+  {
+    key: 'gemstones',
+    title: 'Gemstones',
+    image: gemstonesImg,
+    description:
+      'Over 120 years of gemstone legacy—brilliant colors, flawless cuts, and global trust define KGK’s exceptional collection.',
   },
   {
     key: 'diamonds',
     title: 'Diamonds',
     image: diamondsImg,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+      'Natural, ethical, and exquisite—KGK diamonds reflect unmatched beauty, integrity, and transparency.',
   },
   {
     key: 'jewellery',
     title: 'Jewellery',
     image: jewelleryImg,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+      'Timeless elegance meets craftsmanship. KGK jewellery blends innovation with style and sophistication.',
   },
   {
     key: 'retail',
     title: 'Retail',
     image: retailImg,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+      'From mine to boutique—Entice by KGK brings fine jewellery to life in Hong Kong SAR and India.',
   },
   {
     key: 'real-estate',
     title: 'Real Estate',
     image: realEstateImg,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+      'Craftsmanship meets concrete. KGK extends its legacy to premium real estate development since 2010.',
   },
   {
     key: 'stones',
     title: 'Stones',
     image: stonesImg,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+      'Nature’s finest marbles, granite, and quartzite—refined by KGK for timeless architectural beauty.',
   },
   {
     key: 'technology',
     title: 'Technology & Innovation',
     image: technologyImg,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+      'Pioneering innovation with advanced technologies like MPCVD, laser cutting, and diamond coatings for high-performance solutions.',
   },
   {
     key: 'hospitality',
     title: 'Hospitality',
     image: hospitalityImg,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
+      'Blending tradition, innovation, and precision to offer luxurious dining experiences, redefining culinary excellence with impeccable service.',
   },
 ];
+
 
 export default function OurBusiness() {
   const [active, setActive] = useState(businessItems[0]);
@@ -100,23 +101,32 @@ export default function OurBusiness() {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-heading whitespace-nowrap"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-heading whitespace-nowrap mb-4 lg:mb-0 lg:mt-0 uppercase"
           >
             Business
           </motion.h2>
 
             {/* Paragraph + Line */}
             <div className="flex flex-col w-full relative lg:-right-14">
-                <p className="text-[19px] tracking-[0px] leading-[31px] text-black">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              {/* Single paragraph for mobile and tablet */}
+              <p className="md:text-lg lg:text-xl leading-relaxed text-black max-w-4xl block lg:hidden">
+                KGK Group stands out with its vertically integrated business model, seamlessly connecting the entire value chain from mines to retail. As a global leader in gemstones and diamonds, KGK Group provides exceptional quality to customers worldwide.
+              </p>
+
+              {/* Split paragraphs for large screens */}
+              <div className="hidden lg:flex flex-col">
+                <p className="md:text-lg lg:text-xl leading-relaxed text-black max-w-4xl">
+                  KGK Group stands out with its vertically integrated business model, seamlessly connecting the entire value chain from mines to retail. As a global leader in gemstones and diamonds,
                 </p>
                 <div className="flex items-center">
-                    <p className="md:text-lg lg:text-xl leading-relaxed text-black">
-                    eiusmod tempor incididunt ut labore et dolore.
-                    </p>
-                    <div className="flex-grow h-0.5 bg-light-gray ml-14" />
+                  <p className="md:text-lg lg:text-xl leading-relaxed text-black">
+                    KGK Group provides exceptional quality to customers worldwide.
+                  </p>
+                  <div className="flex-grow h-0.5 bg-light-gray ml-14" />
                 </div>
+              </div>
             </div>
+
         </div>
 
 

@@ -26,7 +26,7 @@ export default function UpcomingEvents() {
                 Upcoming Events
             </h2>
              <p className="max-w-2xl text-xl mb-5  leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+              Showcasing at global jewellery exhibitions, connecting with trade professionals and consumers alike
             </p>
             <div className="flex items-center">
               <div className="flex-grow h-0.5 bg-light-gray mr-6"></div>

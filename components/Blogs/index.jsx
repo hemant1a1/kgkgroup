@@ -35,7 +35,7 @@ export default function Blogs() {
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-heading mb-4">Our Blogs</h2>
             <p className="md:text-lg lg:text-xl leading-relaxed max-w-2xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+              Discover trends, styling tips, and insights from the world of fine jewellery.
             </p>
           </div>
           

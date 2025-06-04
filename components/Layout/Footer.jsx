@@ -5,11 +5,11 @@ import Image from "next/image";
 import { ChevronUpCircle } from "lucide-react";
 
 // Social icon images
-import FacebookIcon from "@/assets/images/facebook.png";
-import TwitterIcon from "@/assets/images/twitter.png";
-import InstagramIcon from "@/assets/images/instagram.png";
-import LinkedinIcon from "@/assets/images/linkedin.png";
-import YoutubeIcon from "@/assets/images/youtube.png";
+import FacebookIcon from "@/assets/images/facebook.webp";
+import TwitterIcon from "@/assets/images/twitter.webp";
+import InstagramIcon from "@/assets/images/instagram.webp";
+import LinkedinIcon from "@/assets/images/linkedin.webp";
+import YoutubeIcon from "@/assets/images/youtube.webp";
 
 export default function Footer() {
   
@@ -62,7 +62,7 @@ export default function Footer() {
               href={icon.link}
               className="w-[37px] h-[37px] flex items-center justify-center"
             >
-              <Image src={icon.src} alt={icon.alt} width={16} height={16} className="w-full h-full" />
+              <Image src={icon.src} alt={icon.alt} width={37} height={37} className="w-full h-full" />
             </a>
           ))}
         </div>
