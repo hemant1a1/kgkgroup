@@ -63,14 +63,26 @@ export default function Awards() {
                 nextEl: '.award-button-next',
                 prevEl: '.award-button-prev',
               }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1, 
+                  centeredSlides: true,
+                },
+                768: {
+                  slidesPerView: 'auto',
+                  centeredSlides: true,
+                },
+              }}
               className="pb-16"
             >
              {visibleAwards.map((award, index) => (
                 <SwiperSlide key={index}
                   className={clsx(
-          index === activeIndex ? '!w-[430px]' : '!w-[379px]', // Wider center slide
-          'transition-all duration-300'
-        )}
+                    'w-full transition-all duration-300 mx-auto',
+                    index === activeIndex
+                      ? 'sm:max-w-[430px]'
+                      : 'sm:max-w-[379px]',
+                  )}
                 >
                   <div
                     className={clsx(

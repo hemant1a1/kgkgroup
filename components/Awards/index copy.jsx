@@ -63,7 +63,7 @@ export default function Awards() {
                 nextEl: '.award-button-next',
                 prevEl: '.award-button-prev',
               }}
-              className="pb-16 overflow-visible"
+              className="pb-16"
             >
              {visibleAwards.map((award, index) => (
                 <SwiperSlide key={index}
