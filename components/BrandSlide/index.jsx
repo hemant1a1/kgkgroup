@@ -39,6 +39,7 @@ const brands = [
 
 export default function BrandSlide() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+   const [mobileIndex, setMobileIndex] = useState(0);
 
   return (
     <div className="w-full flex items-center justify-center py-12">
@@ -49,7 +50,7 @@ export default function BrandSlide() {
         </div>
 
         {/* Right: Brand Grid */}
-        <div className="w-full md:w-[66.98%] grid grid-cols-3">
+        <div className="w-full md:w-[66.98%] hidden md:grid grid-cols-3">
           {brands.map((brand, i) => {
             const isActive = hoveredIndex === i || (hoveredIndex === null && i === 1);
 
@@ -93,6 +94,34 @@ export default function BrandSlide() {
             );
           })}
         </div>
+
+        {/* Mobile View */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:hidden px-4">
+          {brands.map((brand, index) => (
+            <div key={index} className="relative w-full h-[280px] rounded overflow-hidden">
+              {/* Background Image */}
+              <Image
+                src={brand.bgImage}
+                alt={`${brand.name} background`}
+                fill
+                className="object-cover transition-all duration-500"
+              />
+              
+              {/* Logo Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center z-20 bg-black/40">
+                <Image
+                  src={brand.logoWhite}
+                  alt={brand.name}
+                  width={200}
+                  height={150}
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+
       </div>
     </div>
   );
