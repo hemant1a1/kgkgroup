@@ -73,7 +73,7 @@ export default function Header() {
               >
                 Businesses <ChevronDown size={16} />
               </button>
-              <div className="absolute top-full left-0 bg-white text-black text-darkGray shadow-md hidden group-hover:block min-w-[200px] z-10">
+              <div className="absolute top-full left-0 bg-white text-black text-darkGray shadow-md hidden group-hover:block min-w-[190px] z-10">
                 <ul className="text-xs">
                   {[
                     { href: "/business/gems", label: "Gems And Jewellery" },
