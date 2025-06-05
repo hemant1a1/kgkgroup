@@ -80,8 +80,8 @@ export default function Awards() {
                   className={clsx(
                     'w-full transition-all duration-300 mx-auto',
                     index === activeIndex
-                      ? 'sm:max-w-[430px]'
-                      : 'sm:max-w-[379px]',
+                      ? 'sm:max-w-[379px]'
+                      : 'sm:max-w-[320px]',
                   )}
                 >
                   <div
@@ -100,7 +100,7 @@ export default function Awards() {
                       {/* Image Box */}
                       <div 
                         className={clsx(
-                          'relative w-full h-[289px]',
+                          'relative w-full h-[250px]',
                           index === activeIndex ? 'relative' : '-mt-24'
                         )}
                       >
@@ -117,11 +117,11 @@ export default function Awards() {
                       </div>
 
                       {/* Text Box inside dark background */}
-                      <div className="px-4 pt-6 pb-4 text-black text-center flex flex-col items-center justify-center">
+                      <div className="px-4 pt-2 pb-2 text-black text-center flex flex-col items-center justify-center">
                         <p className="font-cardo font-bold text-sm md:text-base lg:text-lg">{award.title}</p>
                         {award.subtitle && index === activeIndex && (
                           <>
-                            <p className="font-light text-[15px] mt-2 px-16 mb-4">{award.subtitle}</p>
+                            <p className="font-light text-[15px] mt-1 px-16 mb-2">{award.subtitle}</p>
                             <ChevronRight size={42} strokeWidth={0.5} />
                           </>
                         )}
@@ -138,7 +138,7 @@ export default function Awards() {
       </div>
 
        {/* Navigation Arrows */}
-        <div className="relative flex justify-center mt-6 gap-4 z-10">
+        <div className="relative flex justify-center mt-1 gap-4 z-10">
           <button className="award-button-prev border p-2 border-black bg-white flex items-center justify-center w-12 h-12">
             <ChevronLeft size={32} strokeWidth={1} />
           </button>

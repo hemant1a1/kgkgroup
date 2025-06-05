@@ -42,17 +42,17 @@ body {
 }
 
 .container-after::after {
-  content: '';
-  position: absolute;
-  top: calc(var(--spacing) * 12);
-  left: 50%;
-  width: 75%;
-  height: 90%;
-  background: #1f355e;
-  border-radius: 0.75rem;
-  transform: translateX(-50%);
-  pointer-events: none;
-  z-index: 0;
+      content: '';
+    position: absolute;
+    top: calc(var(--spacing) * 12);
+    left: 50%;
+    width: 66%;
+    height: 88%;
+    background: #1f355e;
+    border-radius: 0.75rem;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .center-card-after::after {

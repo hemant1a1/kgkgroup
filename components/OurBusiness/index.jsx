@@ -157,8 +157,8 @@ export default function OurBusiness() {
                     <h3 className="text-[22px] tracking-[9px] uppercase font-normal px-11">
                     {active.title.toUpperCase()}
                     </h3>
-                    <p className="mt-12 pl-11 pr-[70px] text-[19px] tracking-[0px] leading-[31px]">{active.description}</p>
-                    <button className="mx-11 mt-11 mb-[1px] px-5 py-2 bg-white text-black font-light text-sm uppercase tracking-widest rounded-full w-fit hover:bg-gray-200 transition">
+                    <p className="mt-3 pl-11 pr-[60px] text-lg">{active.description}</p>
+                    <button className="mx-11 mt-5 mb-2 px-5 py-2 bg-white text-black font-light text-sm uppercase tracking-widest rounded-full w-fit hover:bg-gray-200 transition">
                     Discover More
                     </button>
                 </div>
