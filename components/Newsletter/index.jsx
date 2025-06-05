@@ -8,7 +8,7 @@ export default function Newsletter() {
     <div className="flex flex-col md:flex-row w-full">
       {/* Left side - Subscription Form */}
       <div className="w-full md:w-1/2 bg-primary flex flex-col justify-center px-5 md:px-20 py-20 text-white">
-        <h2 className="text-4xl font-normal mb-4">Stay in touch</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal mb-4">Stay in touch</h2>
         <p className="text-xl font-light mb-8">Subscribe to our newsletter!</p>
         <div className="flex w-full max-w-md h-[57px]">
             <input

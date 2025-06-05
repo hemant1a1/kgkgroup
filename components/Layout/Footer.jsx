@@ -30,7 +30,7 @@ export default function Footer() {
   
 
   return (
-    <footer className="relative bg-deep-blue text-white text-sm px-4 md:px-0 pt-10 pb-6">
+    <footer className="relative bg-deep-blue text-white text-sm px-4 md:px-0 pt-12 pb-8">
       {/* Go to Top Button */}
       <button
         id="goTopBtn"
@@ -42,12 +42,12 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto text-center">
         {/* Top Navigation Links */}
-        <div className="flex flex-wrap justify-center gap-4 mb-11">
+        <div className="flex flex-wrap justify-center gap-3 mb-11">
           {["ABOUT", "NEWS", "CSR", "CAREERS", "CONTACT", "BLOGS", "ENGLISH"].map((item) => (
             <a
               key={item}
               href="#"
-              className="font-cardo text-[12px] border border-white px-4 py-1 hover:bg-white hover:text-black transition-colors"
+              className="font-cardo text-[12px] tracking-widest border border-white px-4 py-1.5 hover:bg-white hover:text-black transition-colors"
             >
               {item}
             </a>
@@ -70,7 +70,7 @@ export default function Footer() {
 
 
         {/* Copyright */}
-        <p className="text-[12px] text-white">
+        <p className="text-[13px] tracking-widest text-white">
           Copyright © 2024 by KGK Group |{" "}
           <a href="#" className="text-white">Legal and Privacy</a>
         </p>
