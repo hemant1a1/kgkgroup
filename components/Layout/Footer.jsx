@@ -42,7 +42,7 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto text-center">
         {/* Top Navigation Links */}
-        <div className="flex flex-wrap justify-center gap-3 mb-11">
+        <div className="flex flex-wrap justify-center gap-2.5 mb-11">
           {["ABOUT", "NEWS", "CSR", "CAREERS", "CONTACT", "BLOGS", "ENGLISH"].map((item) => (
             <a
               key={item}
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex justify-center gap-4 mb-5">
+        <div className="flex justify-center gap-3 mb-5">
           {socialIcons.map((icon, index) => (
             <a
               key={index}
