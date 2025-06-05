@@ -77,14 +77,17 @@ export default function BrandSlide() {
                 </div>
 
                 {/* Brand Logo */}
-                <Image
-                  src={isActive ? brand.logoWhite : brand.logoBlack}
+               <Image
+                  src={brand.logoBlack}
                   alt={brand.name}
                   width={400}
-                  height={200}
+                  height={220}
                   priority
                   quality={100}
-                  className="z-20 transition duration-300 w-[280px] h-78 object-contain"
+                  className={clsx(
+                    'z-20 transition duration-300 w-[280px] h-auto object-contain',
+                    isActive && 'invert'
+                  )}
                 />
               </div>
             );
