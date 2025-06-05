@@ -5,9 +5,12 @@ import Image from 'next/image';
 import clsx from 'clsx';
 
 // Image imports from assets/images
-import MartinFlyerBlack from '@/assets/images/martin-flyer-black.webp';
-import EnticeBlack from '@/assets/images/entice-black.webp';
-import GreggRuthBlack from '@/assets/images/gregg-ruth-black.webp';
+import MartinFlyerBlack from '@/assets/images/martin-flyer-black.png';
+import MartinFlyerWhite from '@/assets/images/martin-flyer-white.png';
+import EnticeBlack from '@/assets/images/entice-black.png';
+import EnticeWhite from '@/assets/images/entice-white.png';
+import GreggRuthBlack from '@/assets/images/gregg-ruth-black.png';
+import GreggRuthWhite from '@/assets/images/gregg-ruth-white.png';
 
 import BgMartinFlyer from '@/assets/images/bg-martin-flyer.jpg';
 import BgEntice from '@/assets/images/bg-entice.jpg';
@@ -16,17 +19,20 @@ import BgGreggRuth from '@/assets/images/bg-gregg-ruth.jpg';
 const brands = [
   {
     name: 'Martin Flyer',
-    logo: MartinFlyerBlack,
+    logoBlack: MartinFlyerBlack,
+    logoWhite: MartinFlyerWhite,
     bgImage: BgMartinFlyer,
   },
   {
     name: 'Entice',
-    logo: EnticeBlack,
+    logoBlack: EnticeBlack,
+    logoWhite: EnticeWhite,
     bgImage: BgEntice,
   },
   {
     name: 'GREGG RUTH',
-    logo: GreggRuthBlack,
+    logoBlack: GreggRuthBlack,
+    logoWhite: GreggRuthWhite,
     bgImage: BgGreggRuth,
   },
 ];
@@ -72,14 +78,13 @@ export default function BrandSlide() {
 
                 {/* Brand Logo */}
                 <Image
-                  src={brand.logo}
+                  src={isActive ? brand.logoWhite : brand.logoBlack}
                   alt={brand.name}
-                  width={150}
-                  height={80}
-                  className={clsx(
-                    'z-20 transition duration-300 w-[280px] h-78 object-contain',
-                    isActive ? 'invert' : ''
-                  )}
+                  width={400}
+                  height={200}
+                  priority
+                  quality={100}
+                  className="z-20 transition duration-300 w-[280px] h-78 object-contain"
                 />
               </div>
             );
