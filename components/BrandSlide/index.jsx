@@ -85,7 +85,7 @@ export default function BrandSlide() {
                   priority
                   quality={100}
                   className={clsx(
-                    'z-20 transition duration-300 w-[280px] h-auto object-contain',
+                    'z-20 w-[280px] h-auto object-contain transition-[filter] duration-500 ease-in-out',
                     isActive && 'invert'
                   )}
                 />
