@@ -30,7 +30,7 @@ export default function Footer() {
   
 
   return (
-    <footer className="relative bg-deep-blue text-white text-sm px-4 md:px-0 pt-12 pb-8">
+    <footer className="relative bg-deep-blue text-white text-sm px-4 md:px-0 pt-11 pb-6">
       {/* Go to Top Button */}
       <button
         id="goTopBtn"
@@ -47,7 +47,7 @@ export default function Footer() {
             <a
               key={item}
               href="#"
-              className="font-cardo text-[12px] tracking-widest border border-white px-4 py-1.5 hover:bg-white hover:text-black transition-colors"
+              className="font-cardo text-[12.5px] tracking-widest border border-white px-3.5 py-1.5 hover:bg-white hover:text-black transition-colors"
             >
               {item}
             </a>
