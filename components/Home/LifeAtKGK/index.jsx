@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useState } from "react";
 import "swiper/css";
 
-import KGKGrid from "@/components/KGKGrid";
+import KGKGrid from "@/components/Home/KGKGrid";
 import logo from "@/assets/images/kgk-logo-dark.webp";
 
 import s11 from "@/assets/images/life-at-kgk/slide1/1.jpg";

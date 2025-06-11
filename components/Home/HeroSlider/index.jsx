@@ -43,7 +43,10 @@ export default function HeroSlider() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center px-6 text-white max-w-2xl pt-4">
                   <div className="text-lg md:text-xl lg:text-3xl tracking-widest uppercase mb-7 mt-16">{slide.title}</div>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal mb-4 pb-2 border-b-4 border-primary">
+                 {/*  <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal mb-4 pb-2 border-b-4 border-primary">
+                    {slide.subtitle}
+                  </h2> */}
+                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal mb-4 pb-2">
                     {slide.subtitle}
                   </h2>
                 </div>

@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react'
-import WorldMap from '@/components/WorldMap'
-import CountryList from '@/components/CountryList'
+import WorldMap from '@/components/Home/WorldMap'
+import CountryList from '@/components/Home/CountryList'
 
 export default function OurPresence() { 
    const [selected, setSelected] = useState('india')

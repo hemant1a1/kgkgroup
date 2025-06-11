@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import clsx from 'clsx';
+import Link from "next/link";
 
 // Image imports from assets/images
 import MartinFlyerBlack from '@/assets/images/martin-flyer-black.png';
@@ -22,18 +23,21 @@ const brands = [
     logoBlack: MartinFlyerBlack,
     logoWhite: MartinFlyerWhite,
     bgImage: BgMartinFlyer,
+    url: 'https://www.kgkgroup.com/jewellery-operations-oem-oed/#martin-flyer',
   },
   {
     name: 'Entice',
     logoBlack: EnticeBlack,
     logoWhite: EnticeWhite,
     bgImage: BgEntice,
+    url: 'https://www.kgkgroup.com/retail/',
   },
   {
     name: 'GREGG RUTH',
     logoBlack: GreggRuthBlack,
     logoWhite: GreggRuthWhite,
     bgImage: BgGreggRuth,
+    url: 'https://www.kgkgroup.com/jewellery-operations-oem-oed/#gregg-ruth',
   },
 ];
 
@@ -55,8 +59,11 @@ export default function BrandSlide() {
             const isActive = hoveredIndex === i || (hoveredIndex === null && i === 1);
 
             return (
-              <div
+              <Link
                 key={i}
+                href={brand.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative overflow-hidden cursor-pointer flex items-center justify-center group transition-all duration-500"
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
@@ -90,7 +97,7 @@ export default function BrandSlide() {
                     isActive && 'invert'
                   )}
                 />
-              </div>
+              </Link>
             );
           })}
         </div>
@@ -98,7 +105,13 @@ export default function BrandSlide() {
         {/* Mobile View */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:hidden px-4">
           {brands.map((brand, index) => (
-            <div key={index} className="relative w-full h-[280px] rounded overflow-hidden">
+            <Link 
+              key={index}
+              href={brand.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative w-full h-[280px] rounded overflow-hidden"
+            >
               {/* Background Image */}
               <Image
                 src={brand.bgImage}
@@ -117,7 +130,7 @@ export default function BrandSlide() {
                   className="object-contain"
                 />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

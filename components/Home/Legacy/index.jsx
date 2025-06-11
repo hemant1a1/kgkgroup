@@ -2,7 +2,9 @@
 
 import React, { useState } from 'react';
 import HoverButton from "@/components/HoverButton";
-import YoutubeVideoModal from '@/components/YoutubeVideoModal';
+import YoutubeVideoModal from '@/components/Home/YoutubeVideoModal';
+
+import { motion } from "framer-motion";
 
 const Legacy = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -41,16 +43,44 @@ const Legacy = () => {
 
           {/* Right: Content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left lg:pl-24 lg:pr-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-heading mb-14">Legacy: From Vision to Global Leadership</h2>
-            <p className="mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-            </p>
-            <p className="mb-12">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-            </p>
-            <button className="border border-gray-700 text-sm font-normal text-black tracking-widest uppercase px-6 py-2 rounded-full hover:bg-gray-100 transition">
+            <motion.h2
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-heading mb-14"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
+              Enduring Legacy
+            </motion.h2>
+            <motion.p
+              className="mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
+              The story of KGK Group began when Shri Keshrimalji Kothari embarked on a journey to Burma, trading gemstones in India. His dedication and integrity set the foundation for a global presence. Shri Ghisilalji Kothari expanded the vision, fostering innovation and excellence.
+            </motion.p>
+
+            <motion.p
+              className="mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
+              Today, under Mr. Navrattan Kothari, KGK Group has become a premium global brand, with Mr. Sanjay and Mr. Sandeep Kothari continuing the legacy and the fifth generation, including Mr. Saransh, Mr. Vedant, and Mr. Arnav, shaping the future.
+            </motion.p>
+
+            <motion.button
+              className="border border-gray-700 text-sm font-normal text-black tracking-widest uppercase px-6 py-2 rounded-full hover:bg-gray-100 transition"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
               DISCOVER MORE
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>

@@ -108,7 +108,7 @@ export default function EventsMedia() {
             },
           }}
           modules={[Navigation, Scrollbar]}
-          className="!overflow-visible"
+          className=""
         >
           {thumbnails.map((img, idx) => {
             const isActive = img.src === mainImage.src;
