@@ -11,7 +11,7 @@ import VerticalStepNav from '@/components/gemstones/VerticalStepNav';
 
 import bgImage from '@/assets/images/banners/gemstones-banner-1.jpg';
 
-
+ 
 
 export default function Gemstones() {
   return (
