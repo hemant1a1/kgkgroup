@@ -76,7 +76,7 @@ export default function Header() {
               <div className="absolute top-full left-0 bg-white text-black text-darkGray shadow-md hidden group-hover:block min-w-[190px] z-10">
                 <ul className="text-xs">
                   {[
-                    { href: "/business/gems", label: "Gems And Jewellery" },
+                    { href: "/our-businesses/gemstones", label: "Gems And Jewellery" },
                     { href: "/business/real-estate", label: "Real Estate" },
                     { href: "/business/marble", label: "Marble Mining" },
                     { href: "/business/hospitality", label: "Hospitality" },

@@ -9,7 +9,7 @@ const Layout = async ({children})=>{
     return (
        <>
         <Header />
-            <main className="relative z-0 overflow-visible">
+            <main className="relative overflow-visible">
                 {children}
             </main>
         <Footer />

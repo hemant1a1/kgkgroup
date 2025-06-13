@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import HoverButton from "@/components/HoverButton";
-import YoutubeVideoModal from '@/components/Home/YoutubeVideoModal';
+import YoutubeVideoModal from '@/components/YoutubeVideoModal';
 
 import { motion } from "framer-motion";
 
