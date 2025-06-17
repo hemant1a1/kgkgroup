@@ -22,6 +22,17 @@
 
 }
 
+@layer utilities {
+  .mask-leadership::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('../images/mask-1.png') no-repeat center / cover;
+    mix-blend-mode: multiply;
+    opacity: 0.7;
+  }
+}
+
 body {
   overflow-x: hidden;
 }

@@ -8,6 +8,7 @@ import DistributionMap from '@/components/Gemstones/DistributionMap';
 import Contact from '@/components/Gemstones/Contact';
 
 
+
 import bgImage from '@/assets/images/banners/gemstones-banner-1.jpg';
 
  
