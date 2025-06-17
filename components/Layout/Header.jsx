@@ -56,9 +56,9 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/about"
+              href="/about-us"
               className={`border-b ${
-                isActive("/about") ? "border-white" : "border-transparent"
+                isActive("/about-us") ? "border-white" : "border-transparent"
               }`}
             >
               About Us

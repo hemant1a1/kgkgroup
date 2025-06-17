@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { ChevronUpCircle } from "lucide-react";
 
@@ -44,13 +45,13 @@ export default function Footer() {
         {/* Top Navigation Links */}
         <div className="flex flex-wrap justify-center gap-2.5 mb-11">
           {["ABOUT", "NEWS", "CSR", "CAREERS", "CONTACT", "BLOGS", "ENGLISH"].map((item) => (
-            <a
+            <Link
               key={item}
-              href="#"
+              href="/about-us"
               className="font-cardo text-[12.5px] tracking-widest border border-white px-3.5 py-1.5 hover:bg-white hover:text-black transition-colors"
             >
               {item}
-            </a>
+            </Link>
           ))}
         </div>
 
