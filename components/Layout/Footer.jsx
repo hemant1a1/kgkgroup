@@ -13,6 +13,16 @@ import LinkedinIcon from "@/assets/images/linkedin.webp";
 import YoutubeIcon from "@/assets/images/youtube.webp";
 
 export default function Footer() {
+
+  const menuItems = [
+    { label: "ABOUT", href: "/about-us" },
+    { label: "NEWS", href: "/news" },
+    { label: "CSR", href: "/csr-initiatives" },
+    { label: "CAREERS", href: "/careers" },
+    { label: "CONTACT", href: "/contact" },
+    { label: "BLOGS", href: "/blogs" },
+    { label: "ENGLISH", href: "/en" }, // or maybe just "#"
+  ];
   
   useEffect(() => {
     const btn = document.getElementById("goTopBtn");
@@ -44,15 +54,17 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto text-center">
         {/* Top Navigation Links */}
         <div className="flex flex-wrap justify-center gap-2.5 mb-11">
-          {["ABOUT", "NEWS", "CSR", "CAREERS", "CONTACT", "BLOGS", "ENGLISH"].map((item) => (
+
+          {menuItems.map((item) => (
             <Link
-              key={item}
-              href="/about-us"
+              key={item.label}
+              href={item.href}
               className="font-cardo text-[12.5px] tracking-widest border border-white px-3.5 py-1.5 hover:bg-white hover:text-black transition-colors"
             >
-              {item}
+              {item.label}
             </Link>
           ))}
+
         </div>
 
         {/* Social Media Icons */}

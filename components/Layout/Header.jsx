@@ -108,9 +108,9 @@ export default function Header() {
               Foundation
             </Link>
             <Link
-              href="/career"
+              href="/careers"
               className={`border-b ${
-                isActive("/career") ? "border-white" : "border-transparent"
+                isActive("/careers") ? "border-white" : "border-transparent"
               }`}
             >
               Career
