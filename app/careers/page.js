@@ -13,6 +13,7 @@ export default function Career() {
         heading="Joining the KGK family"
         subheading="OPPORTUNITIES TO SHINE"
         bgImage={bgImage}
+        showDivider={true}
       />
       <JoinTeam />
       <Transcending />

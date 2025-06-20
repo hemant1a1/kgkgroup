@@ -6,7 +6,7 @@ import { ChevronRight } from 'lucide-react';
 
 import { motion } from "framer-motion";
 
-export default function Breadcrumb({ heading, subheading, bgImage }) {
+export default function Breadcrumb({ heading, subheading, bgImage, showDivider = false }) {
   const pathname = usePathname();
   const segments = pathname.split('/').filter(Boolean);
 
@@ -38,7 +38,7 @@ export default function Breadcrumb({ heading, subheading, bgImage }) {
             viewport={{ once: true }}
           >{heading}</motion.h1>
 
-          <div className="w-28 h-0.5 bg-primary mt-8"></div>
+          {showDivider && <div className="w-28 h-0.5 bg-primary mt-8"></div>}
         </div>
         {/* Bottom Breadcrumb */}
         <div className="mt-2 mb-6">
