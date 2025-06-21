@@ -166,7 +166,7 @@ export default function Header() {
             </button>
             {submenuOpen && (
               <ul className="pl-4 mt-2 space-y-2 text-sm">
-                <li><Link href="/business/gems">Gems And Jewellery</Link></li>
+                <li><Link href="/business/gemstones">Gems And Jewellery</Link></li>
                 <li><Link href="/business/real-estate">Real Estate</Link></li>
                 <li><Link href="/business/marble">Marble Mining</Link></li>
                 <li><Link href="/business/hospitality">Hospitality</Link></li>
