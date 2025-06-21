@@ -16,7 +16,7 @@ export default function Footer() {
 
   const menuItems = [
     { label: "ABOUT", href: "/about-us" },
-    { label: "NEWS", href: "/news" },
+    { label: "NEWS", href: "/events-&-media" },
     { label: "CSR", href: "/csr-initiatives" },
     { label: "CAREERS", href: "/careers" },
     { label: "CONTACT", href: "/contact" },
