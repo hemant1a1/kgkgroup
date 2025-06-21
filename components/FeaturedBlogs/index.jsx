@@ -16,32 +16,32 @@ const blogPosts = [
   {
     title: 'Wedding Jewellery Trends for the Modern Bride',
     img: blog1,
-    href: '#',
+    slug: 'wedding-jewellery-trends-for-the-modern-bride',
   },
   {
     title: 'Men’s Diamond Jewelry: Top 7 Fashion Trends In 2024',
     img: blog2,
-    href: '#',
+    slug: 'top-7-fashion-trends-in-2024',
   },
   {
     title: 'Charm of Greens: Unveiling the Beauty of Green Gemstones',
     img: blog3,
-    href: '#',
+    slug: 'unveiling-the-beauty-of-green-gemstones',
   },
   {
     title: 'Wedding Jewellery Trends for the Modern Bride',
     img: blog1,
-    href: '#',
+    slug: 'wedding-jewellery-trends-for-the-modern-bride',
   },
   {
     title: 'Men’s Diamond Jewelry: Top 7 Fashion Trends In 2024',
     img: blog2,
-    href: '#',
+    slug: 'top-7-fashion-trends-in-2024',
   },
   {
     title: 'Charm of Greens: Unveiling the Beauty of Green Gemstones',
     img: blog3,
-    href: '#',
+    slug: 'unveiling-the-beauty-of-green-gemstones',
   },
 ];
 
@@ -70,17 +70,34 @@ export default function FeaturedBlogs() {
       <div className="container">
         <div className="px-0 lg:px-[50px]">
           <div className="flex flex-col xl:flex-row xl:items-center mb-8 xl:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-heading mb-4 xl:mb-0 xl:basis-3/12">Lorem Ipsum Ipsum</h2>
-              <p className="xl:basis-9/12 text-[15px] leading-[25px] tracking-[0px] font-normal text-header">
+              <motion.h2 
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-heading mb-4 xl:mb-0 xl:basis-3/12"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                viewport={{ once: true }}
+              >Lorem Ipsum Ipsum</motion.h2>
+              <motion.p 
+                className="xl:basis-9/12 text-[15px] leading-[25px] tracking-[0px] font-normal text-header"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+                viewport={{ once: true }}
+              >
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-              </p>
+              </motion.p>
           </div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
             <span className="inline-block bg-primary text-white text-xs font-medium px-2.5 py-0.5 rounded-full mb-4">
               Featured
             </span>
-          </div>
+          </motion.div>
 
           {/* Swiper Container */}
           <div ref={containerRef}>
@@ -130,14 +147,14 @@ export default function FeaturedBlogs() {
                         />
                         <div className="absolute bottom-0 left-0 w-full px-4 py-6 bg-gradient-to-t from-black/80 to-transparent">
                           <Link
-                            href={post.href}
+                            href={`blogs/${post.slug}`} 
                             className="text-lg text-white block mb-3 max-w-xs"
                           >
                             {post.title}
                           </Link>
-                          <button className="mt-3 inline-block bg-white text-black text-[9px] font-medium tracking-wide uppercase px-4 py-1.5 rounded-full hover:bg-gray-100 transition">
+                          <Link href={`blogs/${post.slug}`} className="mt-3 inline-block bg-white text-black text-[9px] font-medium tracking-wide uppercase px-4 py-1.5 rounded-full hover:bg-gray-100 transition">
                             Read More
-                          </button>
+                          </Link>
                         </div>
                       </div>
                     </motion.div>

@@ -10,7 +10,7 @@ import logo from "@/assets/images/kgk-logo.webp";
 import search from "@/assets/images/search.webp";
 
 export default function Header() {
-  const pathname = usePathname(); // current route
+  const pathname = usePathname();
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
@@ -18,8 +18,8 @@ export default function Header() {
   const toggleDrawer = () => setDrawerOpen(!drawerOpen);
   const toggleSubmenu = () => setSubmenuOpen(!submenuOpen);
 
-  // Helper to check if a link is active (exact match or startsWith for submenu)
-  const isActive = (href) => pathname === href;
+  // Adjust based on your blog detail route
+  const isBlogDetailPage = pathname.startsWith("/blogs/");
   const isBusinessActive = () =>
     [
       "/business/gems",
@@ -29,9 +29,26 @@ export default function Header() {
       "/business/technology",
     ].some((path) => pathname.startsWith(path));
 
+  const headerClasses = isBlogDetailPage
+    ? "relative bg-white text-black mb-4"
+    : "absolute bg-transparent text-white";
+
+  const logoStyle = isBlogDetailPage ? "invert" : "";
+  const searchIconStyle = isBlogDetailPage ? "invert" : "";
+  const textColor = isBlogDetailPage ? "text-black" : "text-white";
+
+  const linkClass = (href) =>
+    `border-b ${
+      pathname === href
+        ? isBlogDetailPage
+          ? "border-black"
+          : "border-white"
+        : "border-transparent"
+    }`;
+
   return (
     <>
-      <header className="absolute top-0 left-0 w-full z-[30] bg-transparent shadow-none">
+      <header className={`top-0 left-0 w-full z-[30] ${headerClasses}`}>
         <div className="container flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="pl-0 lg:pl-[40px] pt-[22px]">
@@ -40,35 +57,26 @@ export default function Header() {
               alt="KGK Group"
               width={120}
               height={40}
-              className="h-[80px] lg:h-[100px] object-contain object-top-left"
+              className={`h-[80px] lg:h-[100px] object-contain ${logoStyle}`}
             />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex md:space-x-14 items-center font-light lg:text-sm uppercase text-white tracking-widest">
-            <Link
-              href="/"
-              className={`border-b ${
-                isActive("/") ? "border-white" : "border-transparent"
-              }`}
-            >
-              Home
-            </Link>
-
-            <Link
-              href="/about-us"
-              className={`border-b ${
-                isActive("/about-us") ? "border-white" : "border-transparent"
-              }`}
-            >
-              About Us
-            </Link>
+          <nav
+            className={`hidden lg:flex md:space-x-14 items-center font-light lg:text-sm uppercase tracking-widest ${textColor}`}
+          >
+            <Link href="/" className={linkClass("/")}>Home</Link>
+            <Link href="/about-us" className={linkClass("/about-us")}>About Us</Link>
 
             {/* Businesses Submenu */}
             <div className="relative group">
               <button
                 className={`flex items-center gap-1 uppercase border-b ${
-                  isBusinessActive() ? "border-white" : "border-transparent"
+                  isBusinessActive()
+                    ? isBlogDetailPage
+                      ? "border-black"
+                      : "border-white"
+                    : "border-transparent"
                 }`}
               >
                 Businesses <ChevronDown size={16} />
@@ -76,7 +84,7 @@ export default function Header() {
               <div className="absolute top-full left-0 bg-white text-black text-darkGray shadow-md hidden group-hover:block min-w-[190px] z-10">
                 <ul className="text-xs">
                   {[
-                    { href: "/our-businesses/gemstones", label: "Gems And Jewellery" },
+                    { href: "/business/gems", label: "Gems And Jewellery" },
                     { href: "/business/real-estate", label: "Real Estate" },
                     { href: "/business/marble", label: "Marble Mining" },
                     { href: "/business/hospitality", label: "Hospitality" },
@@ -99,116 +107,92 @@ export default function Header() {
               </div>
             </div>
 
-            <Link
-              href="/foundation"
-              className={`border-b ${
-                isActive("/foundation") ? "border-white" : "border-transparent"
-              }`}
-            >
-              Foundation
-            </Link>
-            <Link
-              href="/careers"
-              className={`border-b ${
-                isActive("/careers") ? "border-white" : "border-transparent"
-              }`}
-            >
-              Career
-            </Link>
-            <Link
-              href="/contact"
-              className={`border-b ${
-                isActive("/contact") ? "border-white" : "border-transparent"
-              }`}
-            >
-              Contact Us
-            </Link>
+            <Link href="/foundation" className={linkClass("/foundation")}>Foundation</Link>
+            <Link href="/careers" className={linkClass("/careers")}>Career</Link>
+            <Link href="/contact" className={linkClass("/contact")}>Contact Us</Link>
 
             <div className="flex items-center gap-x-6">
               <Image
                 src={search}
                 alt="Search Icon"
-                width={24}  // adjust size as needed
+                width={24}
                 height={24}
-                className="cursor-pointer  w-[24px] h-[24px]"
+                className={`cursor-pointer w-[24px] h-[24px] ${searchIconStyle}`}
               />
-              <button className="bg-primary text-darkGray w-10 h-10 text-xs flex items-center justify-center">
+              <button className="bg-primary text-white w-10 h-10 text-xs flex items-center justify-center">
                 EN
               </button>
             </div>
           </nav>
 
           {/* Hamburger Button */}
-          <button onClick={toggleDrawer} className="lg:hidden text-white">
+          <button onClick={toggleDrawer} className={`${textColor} lg:hidden`}>
             {drawerOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
-        {/* Backdrop */}
-        {drawerOpen && (
-          <div
-            className="fixed inset-0 bg-black/50 z-40"
-            onClick={toggleDrawer}
-          />
-        )}
-
-      
       </header>
 
-         {/* Drawer */}
-      <div className={`fixed top-0 right-0 h-full w-72 bg-black z-50 transform transition-transform duration-300 ease-in-out ${
-  drawerOpen ? "translate-x-0" : "translate-x-full"
-}`}>
-          <div className="p-4 space-y-4 pt-12 relative text-white">
+      {/* Backdrop */}
+      {drawerOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40"
+          onClick={toggleDrawer}
+        />
+      )}
+
+      {/* Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-72 bg-black z-50 transform transition-transform duration-300 ease-in-out ${
+          drawerOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="p-4 space-y-4 pt-12 relative text-white">
+          <button
+            onClick={toggleDrawer}
+            className="absolute top-4 right-4 text-gray-100"
+          >
+            <X size={24} />
+          </button>
+
+          <Link href="/" className="block">Home</Link>
+          <Link href="/about-us" className="block">About Us</Link>
+
+          <div>
             <button
-              onClick={toggleDrawer}
-              className="absolute top-4 right-4 text-gray-100"
+              onClick={toggleSubmenu}
+              className="flex items-center justify-between w-full"
             >
-              <X size={24} />
+              Businesses <ChevronDown size={16} />
             </button>
+            {submenuOpen && (
+              <ul className="pl-4 mt-2 space-y-2 text-sm">
+                <li><Link href="/business/gems">Gems And Jewellery</Link></li>
+                <li><Link href="/business/real-estate">Real Estate</Link></li>
+                <li><Link href="/business/marble">Marble Mining</Link></li>
+                <li><Link href="/business/hospitality">Hospitality</Link></li>
+                <li><Link href="/business/technology">Technology & Innovations</Link></li>
+              </ul>
+            )}
+          </div>
 
-            <Link href="/" className="block">Home</Link>
-            <Link href="/about" className="block">About Us</Link>
+          <Link href="/foundation" className="block">Foundation</Link>
+          <Link href="/careers" className="block">Career</Link>
+          <Link href="/contact" className="block">Contact Us</Link>
 
-            {/* Submenu */}
-            <div>
-              <button
-                onClick={toggleSubmenu}
-                className="flex items-center justify-between w-full"
-              >
-                Businesses <ChevronDown size={16} />
-              </button>
-              {submenuOpen && (
-                <ul className="pl-4 mt-2 space-y-2 text-sm">
-                  <li><Link href="/business/gems">Gems And Jewellery</Link></li>
-                  <li><Link href="/business/real-estate">Real Estate</Link></li>
-                  <li><Link href="/business/marble">Marble Mining</Link></li>
-                  <li><Link href="/business/hospitality">Hospitality</Link></li>
-                  <li><Link href="/business/technology">Technology & Innovations</Link></li>
-                </ul>
-              )}
-            </div>
-
-            <Link href="/foundation" className="block">Foundation</Link>
-            <Link href="/career" className="block">Career</Link>
-            <Link href="/contact" className="block">Contact Us</Link>
-
-            <div className="flex items-center justify-between pt-4 border-t mt-4">
-              <Image
-                src={search}
-                alt="Search Icon"
-                width={20}  // adjust size as needed
-                height={20}
-                className="cursor-pointer"
-              />
-              <button className="bg-darkGray text-white w-10 h-10 text-xs flex items-center justify-center">
-                EN
-              </button>
-
-            </div>
+          <div className="flex items-center justify-between pt-4 border-t mt-4">
+            <Image
+              src={search}
+              alt="Search Icon"
+              width={20}
+              height={20}
+              className="cursor-pointer"
+            />
+            <button className="bg-darkGray text-white w-10 h-10 text-xs flex items-center justify-center">
+              EN
+            </button>
           </div>
         </div>
-
+      </div>
     </>
   );
 }

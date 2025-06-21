@@ -38,7 +38,7 @@ const gemstones = [
 
 export default function Precious() {
   const [hovered, setHovered] = useState('Ruby'); 
-
+  
   return (
     <div id="precious" className="py-20 bg-white">
         <div className="container">
