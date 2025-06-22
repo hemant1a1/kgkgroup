@@ -19,7 +19,10 @@ export default function Header() {
   const toggleSubmenu = () => setSubmenuOpen(!submenuOpen);
 
   // Adjust based on your blog detail route
-  const isBlogDetailPage = pathname.startsWith("/blogs/");
+  const isBlogDetailPage = ["/blogs/", "/events-&-media/"].some((path) =>
+    pathname.startsWith(path)
+  );
+  
   const isBusinessActive = () =>
     [
       "/business/gems",
