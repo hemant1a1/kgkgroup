@@ -10,18 +10,37 @@ import event2 from '@/assets/images/event2.jpg';
 import event3 from '@/assets/images/event3.jpg';
 
 const categories = ['All', 'Healthcare', 'Gemstone', 'Mining', 'Jewelry', 'Retail', 'Realty'];
+
 const events = [
   {
     image: event1,
     title: 'Kgk Group opens diamond factory Botswana',
+    category: 'Healthcare',
   },
   {
     image: event2,
     title: "''The Pride of Rajasthan'' awards by Dainik Bhaskar, Jaipur",
+    category: 'Gemstone',
   },
   {
     image: event3,
     title: 'Diamond Manufacturer of the year Award',
+    category: 'Mining',
+  },
+  {
+    image: event1,
+    title: 'Kgk Group opens diamond factory Botswana',
+    category: 'Jewelry',
+  },
+  {
+    image: event2,
+    title: "''The Pride of Rajasthan'' awards by Dainik Bhaskar, Jaipur",
+    category: 'Retail',
+  },
+  {
+    image: event3,
+    title: 'Diamond Manufacturer of the year Award',
+    category: 'Realty',
   },
 ];
 
@@ -43,9 +62,15 @@ const cardVariants = {
 export default function EventsSection() {
   const [activeCategory, setActiveCategory] = useState('All');
 
+  const filteredEvents =
+    activeCategory === 'All'
+      ? events
+      : events.filter((event) => event.category === activeCategory);
+
   return (
     <div className="py-12 bg-light-primary">
       <div>
+        {/* Title */}
         <motion.h2
           className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-heading mb-6"
           initial={{ opacity: 0, y: 40 }}
@@ -56,7 +81,7 @@ export default function EventsSection() {
           More from the Events
         </motion.h2>
 
-        {/* Category Filter */}
+        {/* Category Tabs */}
         <motion.div
           className="flex justify-center flex-wrap gap-3 md:gap-6 border-b border-primary mb-8"
           initial={{ opacity: 0, y: 30 }}
@@ -80,39 +105,34 @@ export default function EventsSection() {
           ))}
         </motion.div>
 
+        {/* Events Grid */}
         <div className="container">
           <div className="px-0 lg:px-[50px]">
-            {/* Event Grid */}
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-7"
               variants={containerVariants}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
+              key={activeCategory} 
             >
-              {Array.from({ length: 2 }).map((_, rowIndex) =>
-                events.map((event, index) => (
-                  <motion.div
-                    key={`${rowIndex}-${index}`}
-                    variants={cardVariants}
-                    className="space-y-2"
-                  >
-                    <div className="overflow-hidden rounded-md">
-                      <Image
-                        src={event.image}
-                        alt={event.title}
-                        width={280}
-                        height={300}
-                        className="rounded-lg w-full h-60 lg:h-44 object-cover object-top"
-                      />
-                    </div>
-                    <p className="text-base text-third max-w-xs">{event.title}</p>
-                  </motion.div>
-                ))
-              )}
+              {filteredEvents.map((event, index) => (
+                <motion.div key={index} variants={cardVariants} className="space-y-2">
+                  <div className="overflow-hidden rounded-md">
+                    <Image
+                      src={event.image}
+                      alt={event.title}
+                      width={280}
+                      height={300}
+                      className="rounded-lg w-full h-60 lg:h-44 object-cover object-top"
+                    />
+                  </div>
+                  <p className="text-base text-third max-w-xs">{event.title}</p>
+                </motion.div>
+              ))}
             </motion.div>
 
-            {/* Load More Button */}
+            {/* Load More */}
             <motion.div
               className="text-center mt-10"
               initial={{ opacity: 0, y: 30 }}
