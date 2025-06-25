@@ -6,7 +6,7 @@ import { ChevronRight } from 'lucide-react';
 
 import { motion } from "framer-motion";
 
-export default function Breadcrumb({ heading, subheading, bgImage }) {
+export default function Breadcrumb({ heading, subheading, bgImage, subheadingClassName = "" }) {
   const pathname = usePathname();
   const segments = pathname.split('/').filter(Boolean);
 
@@ -29,7 +29,7 @@ export default function Breadcrumb({ heading, subheading, bgImage }) {
         >{heading}</motion.h1>
         {subheading && (
           <motion.p 
-            className="text-xl sm:text-2xl md:text-[26px] lg:text-3xl tracking-[1px] sm:tracking-[2px] md:tracking-[2.5px] lg:tracking-[3px] uppercase text-white font-normal"
+             className={`text-xl sm:text-2xl md:text-[26px] lg:text-3xl tracking-[1px] sm:tracking-[2px] md:tracking-[2.5px] lg:tracking-[3px] uppercase text-white font-normal ${subheadingClassName}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
