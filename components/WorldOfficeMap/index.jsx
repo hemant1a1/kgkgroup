@@ -8,6 +8,7 @@ import pinIcon from '@/assets/images/pin.webp';
 import activePinIcon from '@/assets/images/active-pin.webp';
 import search from '@/assets/images/search.webp';
 import { officeLocations } from '@/lib/officeLocations';
+import { motion } from "framer-motion";
 
 const DownArrowIcon = () => (
   <svg
@@ -70,12 +71,24 @@ export default function WorldOfficeMap() {
     <div className="relative w-full bg-forth pt-32 overflow-hidden">
       <div className="container">
         <div className="px-0 lg:px-[50px]">
-          <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-white font-myriad mb-6">
+          <motion.h2 
+            className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-white font-myriad mb-6"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
             Contact us
-          </h2>
+          </motion.h2>
 
           {/* Dropdowns */}
-            <div className="hidden lg:flex flex-row gap-3 justify-center items-center mb-12 sm:mb-48 overflow-x-auto px-2">
+            <motion.div 
+              className="hidden lg:flex flex-row gap-3 justify-center items-center mb-12 sm:mb-48 overflow-x-auto px-2"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+            >
             {/* Region Dropdown */}
             <div className="relative w-auto min-w-[120px] lg:min-w-[200px]">
                 <select
@@ -121,7 +134,7 @@ export default function WorldOfficeMap() {
             <button className="w-10 h-10 flex items-center justify-center rounded-full bg-[#9b7c5b] shadow">
                 <Image src={search} alt="Search" width={18} height={18} />
             </button>
-            </div>
+            </motion.div>
 
 
           {/* Map + Pins */}
@@ -155,20 +168,25 @@ export default function WorldOfficeMap() {
                     onClick={() => setActive(key)}
                 >
                     {isVisible && (
-                        <div className="hidden lg:block absolute bottom-[36px] left-1/2 flex flex-col items-start z-50 w-[260px]">
-                            
-                            {/* Info Text */}
-                            <div className="text-white text-xs leading-tight">
-                            <p className="text-[#bb9d7b] font-semibold text-2xl font-myriad mb-1">
-                                {office.city} ({office.country})
-                            </p>
-                            <ul className="space-y-3 border-l border-white pl-3 pt-4 pb-24 lg:pb-32">
-                                {office.companies.map((c, i) => (
-                                  <li key={i} className="text-sm text-white">{c.name}</li>
-                                ))}
-                            </ul>
-                            </div>
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, ease: 'easeOut' }}
+                        className="hidden lg:block absolute bottom-[36px] left-1/2 flex flex-col items-start z-50 w-[260px]"
+                      >
+                        <div className="text-white text-xs leading-tight">
+                          <p className="text-[#bb9d7b] font-semibold text-2xl font-myriad mb-1">
+                            {office.city} ({office.country})
+                          </p>
+                          <ul className="space-y-3 border-l border-white pl-3 pt-4 pb-24 lg:pb-32">
+                            {office.companies.map((c, i) => (
+                              <li key={i} className="text-sm text-white">
+                                {c.name}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
+                      </motion.div>
                     )}
 
 

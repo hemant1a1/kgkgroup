@@ -3,6 +3,7 @@
 import Masonry from 'react-masonry-css';
 import { useState } from 'react';
 import { officeLocations } from '@/lib/officeLocations';
+import { motion } from "framer-motion";
 
 const DownArrowIcon = () => (
   <svg
@@ -77,9 +78,15 @@ export default function OfficeLocations() {
                 className="flex flex-col md:flex-row gap-6 md:gap-12 mt-7 border-t border-third pt-7"
               >
                 <div className="w-full lg:w-3/12">
-                  <h2 className="text-base lg:text-[39px] text-[#8c7459] font-extrabold font-myriad pb-2">
+                  <motion.h2 
+                    className="text-base lg:text-[39px] text-[#8c7459] font-extrabold font-myriad pb-2"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    viewport={{ once: true }}
+                  >
                     {region.region}
-                  </h2>
+                  </motion.h2>
                 </div>
 
                 <div className="w-full lg:w-9/12 lg:pr-4">
@@ -90,17 +97,41 @@ export default function OfficeLocations() {
                   >
                     {Object.entries(countryGroups).map(([country, offices]) => (
                       <div key={country} className="break-inside-avoid">
-                        <p className="lg:text-[27px] text-third font-extrabold mb-2">{country}</p>
+                        <motion.p 
+                          className="lg:text-[27px] text-third font-extrabold mb-2"
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+                          viewport={{ once: true }}
+                        >{country}</motion.p>
                         {offices.map((office, index) => (
                           <div key={index} className="mb-3">
-                            <p className="text-[14px] leading-[19px] text-[#8c7459] font-bold mb-2">{office.city}</p>
+                            <motion.p 
+                              className="text-[14px] leading-[19px] text-[#8c7459] font-bold mb-2"
+                              initial={{ opacity: 0, y: 30 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+                              viewport={{ once: true }}
+                            >{office.city}</motion.p>
                             <div className="space-y-5">
                               {office.companies.map((c, i) => (
                                 <div key={i}>
-                                  <p className="text-[14px] leading-[19px] text-head font-bold">{c.name}</p>
-                                  <p className="mt-1 text-[14px] leading-[19px] text-head">
+                                  <motion.p 
+                                    className="text-[14px] leading-[19px] text-head font-bold"
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
+                                    viewport={{ once: true }}
+                                  >{c.name}</motion.p>
+                                  <motion.p 
+                                    className="mt-1 text-[14px] leading-[19px] text-head"
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
+                                    viewport={{ once: true }}
+                                  >
                                     {c.email}
-                                  </p>
+                                  </motion.p>
                                 </div>
                               ))}
                             </div>
