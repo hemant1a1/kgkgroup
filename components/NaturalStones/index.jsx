@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
 import marbleImg from '@/assets/images/stones-3.jpg';
 import graniteImg from '@/assets/images/stones-4.jpg';
 import quartziteImg from '@/assets/images/stones-5.jpg';
@@ -13,32 +15,44 @@ const NaturalStones = () => {
 
       {/* Content */}
       <div className="text-white text-center pt-10 pb-9 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-white mb-4">
+        <motion.h2 
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-white mb-4"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true }}
+        >
           Explore the Beauty of Natural Stones
-        </h2>
-        <p className="text-sm lg:text-[15px] leading-[25px] tracking-wide text-white max-w-4xl mx-auto lg:px-12">
+        </motion.h2>
+        <motion.p 
+          className="text-sm lg:text-[15px] leading-[25px] tracking-wide text-white max-w-4xl mx-auto lg:px-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+          viewport={{ once: true }}
+        >
           From luxurious interiors to marvellous architectural designs, KGK Stones elevates the realm of real estate
           with an unmatched selection of:
-        </p>
+        </motion.p>
       </div>
 
       {/* Cards overlapping background transition */}
       <div className="max-w-screen-xl mx-auto px-4 pb-9 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
-        <StoneCard
-          img={marbleImg}
-          title="Marbles"
-          desc="Prized for their timeless appeal and natural veins."
-        />
-        <StoneCard
-          img={graniteImg}
-          title="Granite"
-          desc="Celebrated for strength, resilience, and beauty."
-        />
-        <StoneCard
-          img={quartziteImg}
-          title="Quartzite"
-          desc="Popular for its unique patterns and versatility."
-        />
+        {[
+          { img: marbleImg, title: 'Marbles', desc: 'Prized for their timeless appeal and natural veins.' },
+          { img: graniteImg, title: 'Granite', desc: 'Celebrated for strength, resilience, and beauty.' },
+          { img: quartziteImg, title: 'Quartzite', desc: 'Popular for its unique patterns and versatility.' },
+        ].map((card, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
+          >
+            <StoneCard {...card} />
+          </motion.div>
+        ))}
       </div>
     </section>
   );

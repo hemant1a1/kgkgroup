@@ -5,6 +5,8 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+import { motion } from 'framer-motion';
+
 import Image from 'next/image';
 import residential from '@/assets/images/real-estate-1.jpg';
 import commercial from '@/assets/images/real-estate-3.jpg';
@@ -26,15 +28,27 @@ export default function RealEstateCarousel() {
       <div className="text-center mb-10">
         <div className="flex items-center justify-center gap-6 mb-2">
             <div className="flex-grow border-t border-third"></div>
-            <h2 className="text-2xl md:text-3xl lg:text-[36px] lg:leading-[46px] font-normal text-heading">
+            <motion.h2 
+              className="text-2xl md:text-3xl lg:text-[36px] lg:leading-[46px] font-normal text-heading"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              viewport={{ once: true }}
+            >
                 Distinguished Development Across Industries
-            </h2>
+            </motion.h2>
             <div className="flex-grow border-t border-third"></div>
         </div>
 
-        <p className="text-sm lg:text-[15px] leading-[25px] tracking-[0px] text-black">
+        <motion.p 
+          className="text-sm lg:text-[15px] leading-[25px] tracking-[0px] text-black"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+          viewport={{ once: true }}
+        >
           KGK Group develops landmark properties across a wide spectrum, delivering excellence in:
-        </p>
+        </motion.p>
       </div>
 
       {/* Carousel */}
@@ -57,7 +71,15 @@ export default function RealEstateCarousel() {
               key={index}
               className="relative"
             >
-              <p className="mb-7 text-center text-base md:text-lg text-head">{slide.title}</p>  
+              <motion.p 
+                className="mb-7 text-center text-base md:text-lg text-head"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                viewport={{ once: true }}
+              >
+                {slide.title}
+              </motion.p>  
               <div className="overflow-hidden w-full h-full">
                 <Image
                   src={slide.image}
