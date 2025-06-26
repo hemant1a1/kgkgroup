@@ -89,7 +89,7 @@ export default function Header() {
                   {[
                     { href: "/business/gemstones", label: "Gems And Jewellery" },
                     { href: "/business/real-estate", label: "Real Estate" },
-                    { href: "/business/marble", label: "Marble Mining" },
+                    { href: "/business/stones", label: "Marble Mining" },
                     { href: "/business/hospitality", label: "Hospitality" },
                     { href: "/business/technology", label: "Technology & Innovations" },
                   ].map(({ href, label }, idx) => (
@@ -171,7 +171,7 @@ export default function Header() {
               <ul className="pl-4 mt-2 space-y-2 text-sm">
                 <li><Link href="/business/gemstones">Gems And Jewellery</Link></li>
                 <li><Link href="/business/real-estate">Real Estate</Link></li>
-                <li><Link href="/business/marble">Marble Mining</Link></li>
+                <li><Link href="/business/stones">Marble Mining</Link></li>
                 <li><Link href="/business/hospitality">Hospitality</Link></li>
                 <li><Link href="/business/technology">Technology & Innovations</Link></li>
               </ul>
