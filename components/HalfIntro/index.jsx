@@ -18,7 +18,9 @@ export default function HalfIntro({
   buttonColor = "bg-white text-black hover:bg-gray-100",
   textColor = "text-white",
   headingCustomClass = "lg:pr-6",
-  descriptionCustomClass = "lg:pr-[70px]"
+  descriptionCustomClass = "lg:pr-[70px]",
+  showButton = true,
+  paddingLeftClass = "lg:pl-0",
 }) {
   return (
     <div
@@ -27,7 +29,7 @@ export default function HalfIntro({
     >
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="hidden md:block" />
-        <div className="text-white px-[50px] lg:pl-0 py-20 flex items-center">
+        <div className={`text-white px-[50px] py-20 flex items-center ${paddingLeftClass}`}>
           <div className="max-w-screen-xl">
             <motion.h2
               className={`text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal mb-7 max-w-md ${headingCustomClass} ${textColor}`}
@@ -47,12 +49,14 @@ export default function HalfIntro({
             >
               {description}
             </motion.div>
-            <Link
-              href={buttonHref}
-              className={`mt-3 inline-block text-xs font-medium tracking-wide uppercase px-4 py-2.5 rounded-full transition ${buttonColor}`}
-            >
-              {buttonText}
-            </Link>
+            {showButton && (
+              <Link
+                href={buttonHref}
+                className={`mt-3 inline-block text-xs font-medium tracking-wide uppercase px-4 py-2.5 rounded-full transition ${buttonColor}`}
+              >
+                {buttonText}
+              </Link>
+            )}
           </div>
         </div>
       </div>

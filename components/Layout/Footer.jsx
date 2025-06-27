@@ -45,7 +45,7 @@ export default function Footer() {
       {/* Go to Top Button */}
       <button
         id="goTopBtn"
-        className="absolute -top-3 right-6 bg-primary hover:bg-primary transition-colors p-2"
+        className="absolute -top-3 right-6 bg-primary hover:bg-primary transition-colors p-2 z-50"
         aria-label="Go to top"
       >
         <ChevronUpCircle className="w-6 h-6" strokeWidth={2} />
