@@ -8,7 +8,7 @@ import stones2 from '@/assets/images/stones-2.png';
 
 const KGKStonesSection = () => {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-24 overflow-x-hidden">
       <div className="flex flex-col md:flex-row items-center md:items-start px-4 md:pl-0 md:pr-7 gap-6">
         {/* Left Image */}
         <motion.div
