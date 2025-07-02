@@ -30,7 +30,7 @@ export default function Hospitality() {
             buttonColor="bg-primary text-white hover:bg-primary"
             textColor="text-heading"
             headingCustomClass = "lg:pr-0"
-            descriptionCustomClass = "lg:pr-[115px]"
+            descriptionCustomClass = "lg:pr-[60px] lg:text-[17px]"
         />
         <Newsletter
             img={newsletterImg}

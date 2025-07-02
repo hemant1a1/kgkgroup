@@ -24,7 +24,7 @@ const HealthcareSection = () => {
         />
       </motion.div>
 
-      <div className="w-full lg:w-1/2 px-6 py-10 lg:py-20 lg:px-10 lg:pr-[100px] flex items-center">
+      <div className="w-full lg:w-1/2 px-6 py-10 lg:py-[138px] lg:px-12 lg:pr-[100px] flex items-center">
         <div>
           <motion.h2 
             className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal text-white mb-5"

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import healthcareImg from '@/assets/images/foundation/healthcare.jpg';
@@ -15,6 +16,7 @@ const sections = [
     img: healthcareImg,
     overlay: 'bg-[#34baaf]',
     textColor: '#34baaf',
+    link: '/kgk-foundation/healthcare',
     content: {
       subtitle: 'Caring for Communities',
       description: 'KGK Foundation ensures access to quality healthcare for underprivileged families through mobile clinics, camps, and partnerships.',
@@ -25,6 +27,7 @@ const sections = [
     img: educationImg,
     overlay: 'bg-[#0332b6]',
     textColor: '#0332b6',
+    link: '/kgk-foundation/education',
     content: {
       subtitle: 'Shaping the Leaders of Tomorrow',
       description: 'KGK Foundation is dedicated to nurturing young minds and equipping them with the knowledge and confidence to shape the future.',
@@ -35,6 +38,7 @@ const sections = [
     img: skillDevImg,
     overlay: 'bg-[#b02930]',
     textColor: '#b02930',
+    link: '/kgk-foundation/skill-development',
     content: {
       subtitle: 'Empowering Through Skills',
       description: 'We help individuals gain livelihood by offering vocational training, job-oriented programs, and entrepreneurship workshops.',
@@ -45,6 +49,7 @@ const sections = [
     img: artCultureImg,
     overlay: 'bg-[#efaf1b]',
     textColor: '#efaf1b',
+    link: '/kgk-foundation/art-culture',
     content: {
       subtitle: 'Preserving Creative Heritage',
       description: 'We celebrate India’s rich artistic traditions, promoting artists and cultural programs to ensure continued appreciation for the arts.',
@@ -55,6 +60,7 @@ const sections = [
     img: heritageImg,
     overlay: 'bg-[#ff852b]',
     textColor: '#ff852b',
+    link: '/kgk-foundation/heritage',
     content: {
       subtitle: 'Guardians of the Past',
       description: 'KGK Foundation restores historical sites and spreads awareness of our architectural and spiritual legacy.',
@@ -223,14 +229,15 @@ const FoundationSection = () => {
 
 
                 <div className="flex justify-center gap-4">
-                  <button
+                  <Link
+                    href={selectedSection.link}
                     className={`
                       px-6 py-2 rounded-full font-semibold text-sm hover:scale-105 transition
                       ${selectedIndex === 3 ? 'bg-black text-white' : 'bg-white text-black'}
                     `}
                   >
                     DISCOVER MORE
-                  </button>
+                  </Link>
 
                   <button
                     onClick={() => setSelectedSection(null)}

@@ -29,7 +29,7 @@ export default function HalfIntro({
     >
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="hidden md:block" />
-        <div className={`text-white px-[50px] py-20 flex items-center ${paddingLeftClass}`}>
+        <div className={`text-white px-[50px] py-16 flex items-center ${paddingLeftClass}`}>
           <div className="max-w-screen-xl">
             <motion.h2
               className={`text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-normal mb-7 max-w-md ${headingCustomClass} ${textColor}`}
@@ -41,7 +41,7 @@ export default function HalfIntro({
               {title}
             </motion.h2>
             <motion.div
-              className={`text-sm lg:text-[15px] leading-[25px] tracking-[0px] mb-6 ${descriptionCustomClass} ${textColor}`}
+              className={`text-sm lg:text-base leading-[25px] tracking-[0px] mb-6 ${descriptionCustomClass} ${textColor}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}

@@ -39,7 +39,7 @@ export default function Breadcrumb({ heading, subheading, bgImage, subheadingCla
       </div>
       {/* Bottom Breadcrumb */}
       <div className="mt-2">
-        <div className="flex flex-wrap justify-center items-center gap-1 text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] tracking-[0.5px] sm:tracking-[0.75px] md:tracking-[1px] uppercase text-white font-light uppercase">
+        <div className="flex flex-wrap justify-center items-center gap-1 text-[10px] sm:text-[11px] tracking-[0.5px] sm:tracking-[0.75px] md:tracking-[1px] uppercase text-white font-light uppercase">
           <Link href="/" className="hover:text-white">Home</Link>
           {segments.map((seg, index) => {
             const href = '/' + segments.slice(0, index + 1).join('/');

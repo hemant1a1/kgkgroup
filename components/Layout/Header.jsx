@@ -87,11 +87,11 @@ export default function Header() {
               <div className="absolute top-full left-0 bg-white text-black text-darkGray shadow-md hidden group-hover:block min-w-[190px] z-10">
                 <ul className="text-xs">
                   {[
-                    { href: "/business/gemstones", label: "Gems And Jewellery" },
-                    { href: "/business/real-estate", label: "Real Estate" },
-                    { href: "/business/stones", label: "Marble Mining" },
-                    { href: "/business/hospitality", label: "Hospitality" },
-                    { href: "/business/technology", label: "Technology & Innovations" },
+                    { href: "/our-business/gemstones", label: "Gems And Jewellery" },
+                    { href: "/our-business/real-estate", label: "Real Estate" },
+                    { href: "/our-business/stones", label: "Marble Mining" },
+                    { href: "/our-business/hospitality", label: "Hospitality" },
+                    { href: "/our-business/technology", label: "Technology & Innovations" },
                   ].map(({ href, label }, idx) => (
                     <li
                       key={idx}
@@ -169,11 +169,11 @@ export default function Header() {
             </button>
             {submenuOpen && (
               <ul className="pl-4 mt-2 space-y-2 text-sm">
-                <li><Link href="/business/gemstones">Gems And Jewellery</Link></li>
-                <li><Link href="/business/real-estate">Real Estate</Link></li>
-                <li><Link href="/business/stones">Marble Mining</Link></li>
-                <li><Link href="/business/hospitality">Hospitality</Link></li>
-                <li><Link href="/business/technology">Technology & Innovations</Link></li>
+                <li><Link href="/our-business/gemstones">Gems And Jewellery</Link></li>
+                <li><Link href="/our-business/real-estate">Real Estate</Link></li>
+                <li><Link href="/our-business/stones">Marble Mining</Link></li>
+                <li><Link href="/our-business/hospitality">Hospitality</Link></li>
+                <li><Link href="/our-business/technology">Technology & Innovations</Link></li>
               </ul>
             )}
           </div>

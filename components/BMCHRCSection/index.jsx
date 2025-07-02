@@ -35,7 +35,7 @@ const BMCHRCSection = () => {
               variants={fadeInUp}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-[22px] lg:text-[33px] text-heading font-myriad mb-6 xl:pr-16">
+              <h2 className="text-[22px] lg:text-[33px] text-heading font-myriad mb-6 xl:pr-24">
                 Bhagwan Mahaveer Cancer Hospital & Research Centre (BMCHRC)
               </h2>
               <p className="text-[13px] lg:text-[15px] leading-[25px] tracking-[0px] text-heading font-myriad  xl:pr-16">
