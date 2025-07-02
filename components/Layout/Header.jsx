@@ -110,7 +110,7 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/foundation" className={linkClass("/foundation")}>Foundation</Link>
+            <Link href="/kgk-foundation" className={linkClass("/kgk-foundation")}>Foundation</Link>
             <Link href="/careers" className={linkClass("/careers")}>Career</Link>
             <Link href="/contact" className={linkClass("/contact")}>Contact Us</Link>
 
@@ -178,7 +178,7 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/foundation" className="block">Foundation</Link>
+          <Link href="/kgk-foundation" className="block">Foundation</Link>
           <Link href="/careers" className="block">Career</Link>
           <Link href="/contact" className="block">Contact Us</Link>
 

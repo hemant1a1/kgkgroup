@@ -15,7 +15,7 @@ export default function Breadcrumb({ heading, subheading, bgImage, showDivider =
 
   return (
     <div
-      className="relative text-white h-[89vh] bg-cover bg-top px-6 pt-14 pb-6 "
+      className="relative text-white h-[89.90vh] bg-cover bg-top px-6 pt-14 pb-6 "
       style={{ backgroundImage: `url(${bgImage.src})` }}
     >
       <div className="flex flex-col justify-between items-center text-center md:max-w-xl lg:max-w-6xl mx-auto h-full">
@@ -41,7 +41,7 @@ export default function Breadcrumb({ heading, subheading, bgImage, showDivider =
           {showDivider && <div className="w-28 h-0.5 bg-primary mt-8"></div>}
         </div>
         {/* Bottom Breadcrumb */}
-        <div className="mt-2 mb-6">
+        <div className="mt-4 mb-7">
           <div className="flex flex-wrap justify-center items-center gap-1 text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] tracking-[0.5px] sm:tracking-[0.75px] md:tracking-[1px] uppercase text-white uppercase">
             <Link href="/" className="hover:text-white">Home</Link>
             {segments.map((seg, index) => {
