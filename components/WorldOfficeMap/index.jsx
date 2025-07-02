@@ -163,7 +163,10 @@ export default function WorldOfficeMap() {
                     left: office.coords.left,
                     transform: 'translate(-50%, -100%)',
                     }}
-                    onMouseEnter={() => setHovered(key)}
+                    onMouseEnter={() => {
+                      setHovered(key);
+                      setActive(key);
+                    }}
                     onMouseLeave={() => setHovered(null)}
                     onClick={() => setActive(key)}
                 >

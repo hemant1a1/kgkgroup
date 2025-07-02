@@ -154,7 +154,7 @@ const FoundationSection = () => {
                       <h3
                         className={`
                           text-white font-semibold font-cardo
-                          text-sm sm:text-base md:text-lg lg:text-[22px]
+                          text-[9px] sm:text-base md:text-lg lg:text-[22px]
                           ${
                             index === 0
                               ? 'pt-[96px]'

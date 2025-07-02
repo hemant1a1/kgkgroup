@@ -87,6 +87,7 @@ export default function LeadershipSection() {
                 title="Navrattan Kothari"
                 subtitle="Patriarch"
                 backgroundImage={leadershipBg1.src}
+                backgroundPositionMobile="right"
                 paragraph={
                   <>
                     <p>
@@ -107,6 +108,7 @@ export default function LeadershipSection() {
                 title="Sanjay Kothari"
                 subtitle="Vice Chairman"
                 backgroundImage={leadershipBg2.src}
+                backgroundPositionMobile="left"
                 imagePosition="left"
                 paragraph={
                   <>
@@ -128,6 +130,7 @@ export default function LeadershipSection() {
                 title="Sandeep Kothari"
                 subtitle="Managing Director"
                 backgroundImage={leadershipBg3.src}
+                backgroundPositionMobile="right"
                 paragraph={
                   <>
                     <p>

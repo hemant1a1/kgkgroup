@@ -112,7 +112,7 @@ export default function Header() {
 
             <Link href="/kgk-foundation" className={linkClass("/kgk-foundation")}>Foundation</Link>
             <Link href="/careers" className={linkClass("/careers")}>Career</Link>
-            <Link href="/contact" className={linkClass("/contact")}>Contact Us</Link>
+            <Link href="/contact-us" className={linkClass("/contact")}>Contact Us</Link>
 
             <div className="flex items-center gap-x-6">
               <Image
@@ -157,8 +157,8 @@ export default function Header() {
             <X size={24} />
           </button>
 
-          <Link href="/" className="block">Home</Link>
-          <Link href="/about-us" className="block">About Us</Link>
+          <Link href="/" onClick={() => setDrawerOpen(false)} className="block">Home</Link>
+          <Link href="/about-us" onClick={() => setDrawerOpen(false)} className="block">About Us</Link>
 
           <div>
             <button
@@ -169,18 +169,18 @@ export default function Header() {
             </button>
             {submenuOpen && (
               <ul className="pl-4 mt-2 space-y-2 text-sm">
-                <li><Link href="/our-business/gemstones">Gems And Jewellery</Link></li>
-                <li><Link href="/our-business/real-estate">Real Estate</Link></li>
-                <li><Link href="/our-business/stones">Marble Mining</Link></li>
-                <li><Link href="/our-business/hospitality">Hospitality</Link></li>
-                <li><Link href="/our-business/technology">Technology & Innovations</Link></li>
+                <li><Link href="/our-business/gemstones" onClick={() => setDrawerOpen(false)}>Gems And Jewellery</Link></li>
+                <li><Link href="/our-business/real-estate" onClick={() => setDrawerOpen(false)}>Real Estate</Link></li>
+                <li><Link href="/our-business/stones" onClick={() => setDrawerOpen(false)}>Marble Mining</Link></li>
+                <li><Link href="/our-business/hospitality" onClick={() => setDrawerOpen(false)}>Hospitality</Link></li>
+                <li><Link href="/our-business/technology" onClick={() => setDrawerOpen(false)}>Technology & Innovations</Link></li>
               </ul>
             )}
           </div>
 
-          <Link href="/kgk-foundation" className="block">Foundation</Link>
-          <Link href="/careers" className="block">Career</Link>
-          <Link href="/contact" className="block">Contact Us</Link>
+          <Link href="/kgk-foundation" onClick={() => setDrawerOpen(false)} className="block">Foundation</Link>
+          <Link href="/careers" onClick={() => setDrawerOpen(false)} className="block">Career</Link>
+          <Link href="/contact-us" onClick={() => setDrawerOpen(false)} className="block">Contact Us</Link>
 
           <div className="flex items-center justify-between pt-4 border-t mt-4">
             <Image

@@ -7,10 +7,10 @@ import realEstateImage from '@/assets/images/building-1.jpg';
 export default function RealEstateSection() {
   return (
     <div className="w-full bg-white">
-      <div className="lg:pl-[100px] flex flex-col lg:flex-row items-center gap-0">
+      <div className="px-[50px] lg:pl-[100px] lg:pr-0 py-16 lg:py-0 flex flex-col lg:flex-row items-center gap-0">
         {/* Left Text Section */}
         <motion.div
-          className="w-full lg:w-5/12 pr-14"
+          className="w-full lg:w-5/12 lg:pr-14"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}

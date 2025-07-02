@@ -9,6 +9,7 @@ export default function Leadership({
   paragraph,
   backgroundImage,
   imagePosition = 'right',
+  backgroundPositionMobile = 'center',
   zIndex,
 }) {
   const TextSection = (
@@ -84,9 +85,10 @@ export default function Leadership({
       <div className="md:hidden relative w-full">
         {/* Background Image with Title + Subtitle Overlay */}
         <div
-          className="w-full h-[300px] bg-cover bg-center relative"
+          className="w-full h-[300px] bg-cover relative"
           style={{
             backgroundImage: `url(${backgroundImage})`,
+            backgroundPosition: backgroundPositionMobile,
             zIndex: zIndex,
           }}
         >
